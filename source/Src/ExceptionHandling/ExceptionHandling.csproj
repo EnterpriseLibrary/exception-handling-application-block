@@ -20,7 +20,7 @@
     <PackageTags>entlib entlib6 Enterprise Library exception handling management ehab error eab LOB futures OSS</PackageTags>
 
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>ExceptionHandling.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\..\EnterpriseLibrary.snk</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
   </PropertyGroup>
 
