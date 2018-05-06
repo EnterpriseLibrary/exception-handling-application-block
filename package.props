@@ -1,6 +1,6 @@
 <Project>
   <Import Project="version.props" />
-  
+
   <PropertyGroup>
     <Version>$(MajorVersion).$(MinorVersion).$(ReleaseVersion)</Version>
     <PackageReleaseNotes>This package is distributed as .NET Standard 2.0, .NET Core 2.0, .NET 4.0, 4.5, 4.6, 4.7 package.</PackageReleaseNotes>
@@ -14,6 +14,10 @@
 
     <RepositoryUrl>https://github.com/EnterpriseLibrary/exception-handling-application-block</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <SystemConfigurationConfigurationManagerVersion>4.4.*</SystemConfigurationConfigurationManagerVersion>
   </PropertyGroup>
 
   <PropertyGroup>
