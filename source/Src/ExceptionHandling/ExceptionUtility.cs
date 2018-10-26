@@ -1,13 +1,13 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using EnterpriseLibrary.ExceptionHandling.Properties;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Properties;
 
-namespace EnterpriseLibrary.ExceptionHandling
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling
 {
     /// <summary>
     /// Provides common functions for the Exception Handling Application Block classes. Cannot inherit from this class.

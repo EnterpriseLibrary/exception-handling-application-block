@@ -1,13 +1,13 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
-using EnterpriseLibrary.Logging;
+using Microsoft.Practices.EnterpriseLibrary.Logging;
 
-namespace EnterpriseLibrary.ExceptionHandling.WCF
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF
 {
     static class ExceptionUtility
     {
@@ -95,7 +95,7 @@ namespace EnterpriseLibrary.ExceptionHandling.WCF
                 message = FormatExceptionMessage(Properties.Resources.ClientUnhandledExceptionMessage, handlingInstanceId);
             }
 
-            return EnterpriseLibrary.ExceptionHandling.ExceptionUtility.FormatExceptionMessage(message, handlingInstanceId);
+            return Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.ExceptionUtility.FormatExceptionMessage(message, handlingInstanceId);
         }
 
         /// <summary>

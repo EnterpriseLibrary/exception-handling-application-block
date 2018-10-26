@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Configuration;
@@ -6,10 +6,10 @@ using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
-using EnterpriseLibrary.ExceptionHandling.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace EnterpriseLibrary.ExceptionHandling.WCF.Tests
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF.Tests
 {
     /// <summary>
     /// Summary description for ExceptionShieldingBehaviorFixture

@@ -1,15 +1,15 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Globalization;
 using System.Linq;
-using EnterpriseLibrary.Common.Configuration;
-using EnterpriseLibrary.Common.Configuration.Design;
-using EnterpriseLibrary.ExceptionHandling.Properties;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Design;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Properties;
 
-namespace EnterpriseLibrary.ExceptionHandling.Configuration
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration
 {
     /// <summary>
     /// Represents the Exception Handling Application Block configuration section in a configuration file.

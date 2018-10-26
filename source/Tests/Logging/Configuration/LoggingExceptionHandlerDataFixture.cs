@@ -1,17 +1,17 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Configuration;
 using System.Diagnostics;
 using System.IO;
-using EnterpriseLibrary.Common.TestSupport.ContextBase;
-using EnterpriseLibrary.ExceptionHandling.Logging.Configuration;
-using EnterpriseLibrary.Logging;
-using EnterpriseLibrary.Logging.Filters;
-using EnterpriseLibrary.Logging.TestSupport.TraceListeners;
+using Microsoft.Practices.EnterpriseLibrary.Common.TestSupport.ContextBase;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Logging;
+using Microsoft.Practices.EnterpriseLibrary.Logging.Filters;
+using Microsoft.Practices.EnterpriseLibrary.Logging.TestSupport.TraceListeners;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace EnterpriseLibrary.ExceptionHandling.Logging.Tests.Configuration.LoggingExceptionHandlerDataFixture
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Tests.Configuration.LoggingExceptionHandlerDataFixture
 {
     public class given_valid_configuration_object_with_no_logger_set : ArrangeActAssert
     {

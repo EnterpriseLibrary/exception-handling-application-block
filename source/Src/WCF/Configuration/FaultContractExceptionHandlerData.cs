@@ -1,16 +1,16 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Configuration;
-using EnterpriseLibrary.Common.Configuration;
-using EnterpriseLibrary.Common.Configuration.Design;
-using EnterpriseLibrary.Common.Configuration.Design.Validation;
-using EnterpriseLibrary.Common.Utility;
-using EnterpriseLibrary.ExceptionHandling.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Design;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Design.Validation;
+using Microsoft.Practices.EnterpriseLibrary.Common.Utility;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration;
 
-namespace EnterpriseLibrary.ExceptionHandling.WCF.Configuration
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF.Configuration
 {
     /// <summary>
     /// Configuration data for the <see cref="FaultContractExceptionHandler"/> class.

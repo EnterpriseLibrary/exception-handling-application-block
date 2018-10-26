@@ -1,10 +1,10 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
 using System.Security;
-using EnterpriseLibrary.Common.Configuration.Design;
-using EnterpriseLibrary.ExceptionHandling.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Design;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration;
 
 [assembly: ReliabilityContract(Consistency.WillNotCorruptState, Cer.None)]
 [assembly: SecurityTransparent]

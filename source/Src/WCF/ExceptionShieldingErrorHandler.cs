@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Globalization;
@@ -7,7 +7,7 @@ using System.ServiceModel.Channels;
 using System.ServiceModel.Dispatcher;
 using System.Web.Services.Protocols;
 
-namespace EnterpriseLibrary.ExceptionHandling.WCF
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF
 {
     /// <summary>
     /// The error handler class that implements the exception shielding logic.

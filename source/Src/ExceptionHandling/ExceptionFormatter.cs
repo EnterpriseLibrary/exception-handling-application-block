@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Collections;
@@ -8,9 +8,9 @@ using System.Reflection;
 using System.Security;
 using System.Security.Principal;
 using System.Threading;
-using EnterpriseLibrary.ExceptionHandling.Properties;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Properties;
 
-namespace EnterpriseLibrary.ExceptionHandling
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling
 {
     /// <summary>
     /// Represents the base class from which all implementations of exception formatters must derive. The formatter provides functionality for formatting <see cref="Exception"/> objects.

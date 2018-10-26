@@ -1,12 +1,12 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using EnterpriseLibrary.ExceptionHandling.Properties;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Properties;
 
-namespace EnterpriseLibrary.ExceptionHandling
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling
 {
     /// <summary>
     /// Represents an entry in an <see cref="ExceptionPolicy"/> containing

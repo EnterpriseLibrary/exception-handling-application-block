@@ -1,13 +1,13 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
-using EnterpriseLibrary.ExceptionHandling.Bvt.Tests.TestObjects;
-using EnterpriseLibrary.ExceptionHandling.WCF;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Bvt.Tests.TestObjects;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 
-namespace EnterpriseLibrary.ExceptionHandling.Bvt.Tests.Wcf
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Bvt.Tests.Wcf
 {
     [TestClass]
     public class WcfProgramaticFixture

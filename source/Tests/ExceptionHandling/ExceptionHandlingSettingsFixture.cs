@@ -1,11 +1,11 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System.Configuration;
-using EnterpriseLibrary.Common.Configuration;
-using EnterpriseLibrary.ExceptionHandling.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace EnterpriseLibrary.ExceptionHandling.Tests
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
 {
     [TestClass]
     public class ExceptionHandlingSettingsFixture

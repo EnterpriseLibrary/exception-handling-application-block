@@ -1,13 +1,13 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using EnterpriseLibrary.ExceptionHandling.Tests;
-using EnterpriseLibrary.ExceptionHandling.Tests.Properties;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests.Properties;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace EnterpriseLibrary.ExceptionHandling.Configuration.Tests.ExceptionHandlingObjectCreationFixture
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration.Tests.ExceptionHandlingObjectCreationFixture
 {
     [TestClass]
     public class given_configuration_settings_with_no_data

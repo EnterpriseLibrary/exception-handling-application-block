@@ -1,12 +1,12 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
-using EnterpriseLibrary.ExceptionHandling.WCF;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF;
 using System;
 using System.Collections;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 
-namespace EnterpriseLibrary.ExceptionHandling.Bvt.Tests.TestUtilities
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Bvt.Tests.TestUtilities
 {
     [ServiceContract]
     public interface IMockService

@@ -1,12 +1,12 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
-using EnterpriseLibrary.Common.TestSupport.ContextBase;
-using EnterpriseLibrary.ExceptionHandling.WCF.Configuration;
-using EnterpriseLibrary.ExceptionHandling.WCF.Tests.Properties;
+using Microsoft.Practices.EnterpriseLibrary.Common.TestSupport.ContextBase;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF.Tests.Properties;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace EnterpriseLibrary.ExceptionHandling.WCF.Tests.Configuration
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF.Tests.Configuration
 {
     [TestClass]
     public class GivenContractExceptionHandlerData : ArrangeActAssert

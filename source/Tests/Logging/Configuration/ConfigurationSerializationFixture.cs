@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Collections.Generic;
@@ -6,12 +6,12 @@ using System.Configuration;
 using System.Diagnostics;
 using System.IO;
 using System.Xml;
-using EnterpriseLibrary.Common.Configuration;
-using EnterpriseLibrary.Common.TestSupport.Configuration;
-using EnterpriseLibrary.ExceptionHandling.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Common.TestSupport.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace EnterpriseLibrary.ExceptionHandling.Logging.Configuration.Tests
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Configuration.Tests
 {
     [TestClass]
     public class ConfigurationSerializationFixture
@@ -79,7 +79,7 @@ namespace EnterpriseLibrary.ExceptionHandling.Logging.Configuration.Tests
 <add name=""All Exceptions"" type=""System.Exception, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089""
 postHandlingAction=""NotifyRethrow"">
 <exceptionHandlers>
-<add name=""Logging Exception Handler"" type=""EnterpriseLibrary.ExceptionHandling.Logging.LoggingExceptionHandler, EnterpriseLibrary.ExceptionHandling.Logging""
+<add name=""Logging Exception Handler"" type=""Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.LoggingExceptionHandler, Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging""
 logCategory=""General"" eventId=""100"" severity=""Error"" title=""Enterprise Library Exception Handling""
 priority=""0"" />
 </exceptionHandlers>

@@ -1,13 +1,13 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
-using EnterpriseLibrary.Common.Configuration.Fluent;
-using EnterpriseLibrary.ExceptionHandling.Configuration;
-using EnterpriseLibrary.ExceptionHandling;
-using EnterpriseLibrary.Common.Properties;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
+using Microsoft.Practices.EnterpriseLibrary.Common.Properties;
 using System.Globalization;
 
-namespace EnterpriseLibrary.Common.Configuration
+namespace Microsoft.Practices.EnterpriseLibrary.Common.Configuration
 {
     /// <summary>
     /// <see cref="IConfigurationSourceBuilder"/> extensions to support creation of exception handling configuration sections.

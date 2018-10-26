@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.IO;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace EnterpriseLibrary.ExceptionHandling.Tests
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
 {
     [TestClass]
     public partial class ExceptionFormatterFixture

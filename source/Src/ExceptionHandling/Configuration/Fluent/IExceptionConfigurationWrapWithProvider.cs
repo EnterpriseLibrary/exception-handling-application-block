@@ -1,8 +1,8 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
-using EnterpriseLibrary.ExceptionHandling;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
 
-namespace EnterpriseLibrary.Common.Configuration.Fluent
+namespace Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent
 {
     ///<summary>
     /// This interface supports the fluent configuration of <see cref="WrapHandler"/>

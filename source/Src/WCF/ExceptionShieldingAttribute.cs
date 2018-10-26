@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Collections.Generic;
@@ -8,13 +8,13 @@ using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
 using System.ServiceModel.Channels;
 using System.Web.Services.Protocols;
-using EnterpriseLibrary.ExceptionHandling;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
 using System.IO;
 using System.Reflection;
 using System.Diagnostics;
 using System.Runtime.Serialization;
 
-namespace EnterpriseLibrary.ExceptionHandling.WCF
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF
 {
     /// <summary>
     /// Indicates that an implementation service class will use exception shielding. 

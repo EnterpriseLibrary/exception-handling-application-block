@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Collections;
@@ -7,12 +7,12 @@ using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Text;
-using EnterpriseLibrary.Common.Configuration;
-using EnterpriseLibrary.ExceptionHandling.Logging.Configuration;
-using EnterpriseLibrary.ExceptionHandling.Logging.Properties;
-using EnterpriseLibrary.Logging;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Properties;
+using Microsoft.Practices.EnterpriseLibrary.Logging;
 
-namespace EnterpriseLibrary.ExceptionHandling.Logging
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging
 {
     /// <summary>
     /// Represents an <see cref="IExceptionHandler"/> that formats

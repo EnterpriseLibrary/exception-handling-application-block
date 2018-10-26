@@ -1,7 +1,7 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
-using EnterpriseLibrary.ExceptionHandling.Configuration;
-using EnterpriseLibrary.Logging;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Configuration;
@@ -11,7 +11,7 @@ using System.ServiceModel.Channels;
 using System.Text.RegularExpressions;
 using System.Web.Services.Protocols;
 
-namespace EnterpriseLibrary.ExceptionHandling.WCF.Tests
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF.Tests
 {
     /// <summary>
     /// Summary description for ExceptionShieldingErrorHandlerFixture

@@ -1,14 +1,14 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Configuration;
 using System.Diagnostics;
-using EnterpriseLibrary.ExceptionHandling.Configuration;
-using EnterpriseLibrary.ExceptionHandling.Logging.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SysConfig = System.Configuration;
 
-namespace EnterpriseLibrary.ExceptionHandling.Logging.Tests
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Tests
 {
     [TestClass]
     public class ConfigurationFixture

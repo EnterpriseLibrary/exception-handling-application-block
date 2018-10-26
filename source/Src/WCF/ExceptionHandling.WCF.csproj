@@ -9,11 +9,11 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <AssemblyName>EnterpriseLibrary.ExceptionHandling.WCF</AssemblyName>
-    <RootNamespace>EnterpriseLibrary.ExceptionHandling.WCF</RootNamespace>
+    <AssemblyName>Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF</AssemblyName>
+    <RootNamespace>Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF</RootNamespace>
     <AssemblyTitle>Enterprise Library Exception Handling WCF Provider</AssemblyTitle>
 
-    <PackageId>EnterpriseLibrary.ExceptionHandling.WCF</PackageId>
+    <PackageId>Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF</PackageId>
     <Title>Enterprise Library Exception Handling WCF Provider</Title>
     <Description>Enterprise Library Exception Handling WCF Provider</Description>
     <Summary>Enterprise Library Exception Handling WCF Provider</Summary>
@@ -31,10 +31,10 @@
 
   <ItemGroup>
     <ProjectReference Include="$(EntLibCommon)" Condition="Exists('$(EntLibCommon)') AND '$(EntLibDependencyType)' == 'Project'" />
-    <PackageReference Include="EnterpriseLibrary.Common" Version="$(EntLibCommonVersion)" Condition="!Exists('$(EntLibCommon)') OR '$(EntLibDependencyType)' == 'Package'" />
+    <PackageReference Include="Microsoft.Practices.EnterpriseLibrary.Common" Version="$(EntLibCommonVersion)" Condition="!Exists('$(EntLibCommon)') OR '$(EntLibDependencyType)' == 'Package'" />
 
     <ProjectReference Include="$(EntLibLogging)" Condition="Exists('$(EntLibLogging)') AND '$(EntLibDependencyType)' == 'Project'" />
-    <PackageReference Include="EnterpriseLibrary.Logging" Version="$(EntLibLoggingVersion)" Condition="!Exists('$(EntLibLogging)') OR '$(EntLibDependencyType)' == 'Package'" />
+    <PackageReference Include="Microsoft.Practices.EnterpriseLibrary.Logging" Version="$(EntLibLoggingVersion)" Condition="!Exists('$(EntLibLogging)') OR '$(EntLibDependencyType)' == 'Package'" />
 
     <ProjectReference Include="..\ExceptionHandling\ExceptionHandling.csproj" />
   </ItemGroup>
@@ -126,7 +126,7 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <DocumentationFile>$(SolutionDir)..\bin\Debug\$(AssemblyName).xml</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
-    <CodeAnalysisRuleSet>..\..\EnterpriseLibrary.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\..\Microsoft.Practices.EnterpriseLibrary.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">

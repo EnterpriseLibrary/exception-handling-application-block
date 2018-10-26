@@ -1,9 +1,9 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
-using EnterpriseLibrary.ExceptionHandling;
-using EnterpriseLibrary.ExceptionHandling.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration;
 
-namespace EnterpriseLibrary.Common.Configuration
+namespace Microsoft.Practices.EnterpriseLibrary.Common.Configuration
 {
     /// <summary>
     /// Used to provide context to extensions of the Exception Handling fluent configuration interface.

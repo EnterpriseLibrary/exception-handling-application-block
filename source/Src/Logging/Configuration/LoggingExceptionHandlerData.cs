@@ -1,18 +1,18 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.ComponentModel;
 using System.Configuration;
 using System.Diagnostics;
-using EnterpriseLibrary.Common.Configuration;
-using EnterpriseLibrary.Common.Configuration.Design;
-using EnterpriseLibrary.Common.Configuration.Design.Validation;
-using EnterpriseLibrary.ExceptionHandling.Configuration;
-using EnterpriseLibrary.ExceptionHandling.Logging.Properties;
-using EnterpriseLibrary.Logging;
-using EnterpriseLibrary.Logging.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Design;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Design.Validation;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Properties;
+using Microsoft.Practices.EnterpriseLibrary.Logging;
+using Microsoft.Practices.EnterpriseLibrary.Logging.Configuration;
 
-namespace EnterpriseLibrary.ExceptionHandling.Logging.Configuration
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Configuration
 {
     /// <summary>
     /// Represents configuration for a <see cref="LoggingExceptionHandler"/>.
@@ -186,7 +186,7 @@ namespace EnterpriseLibrary.ExceptionHandling.Logging.Configuration
         [ResourceDisplayName(typeof(DesignResources), "LoggingExceptionHandlerDataFormatterTypeNameDisplayName")]
         [Editor(CommonDesignTime.EditorTypes.TypeSelector, CommonDesignTime.EditorTypes.UITypeEditor)]
         [BaseType(typeof(ExceptionFormatter))]
-        [DesigntimeDefaultAttribute("EnterpriseLibrary.ExceptionHandling.TextExceptionFormatter, EnterpriseLibrary.ExceptionHandling")]
+        [DesigntimeDefaultAttribute("Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.TextExceptionFormatter, Microsoft.Practices.EnterpriseLibrary.ExceptionHandling")]
         [Validation(ExceptionHandlingLoggingDesigntime.ValidatorTypes.LogFormatterValidator)]
         public string FormatterTypeName
         {

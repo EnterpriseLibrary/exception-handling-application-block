@@ -1,4 +1,3 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2015
@@ -23,17 +22,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandling", "Src\ExceptionHandling\ExceptionHandling.csproj", "{2DB0AD6D-BF59-4EBB-9F99-49ABD8539FD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionHandling", "Src\ExceptionHandling\ExceptionHandling.csproj", "{2DB0AD6D-BF59-4EBB-9F99-49ABD8539FD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandling.Logging", "Src\Logging\ExceptionHandling.Logging.csproj", "{EC311AD3-0A26-4808-901B-A983E97E5790}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionHandling.Logging", "Src\Logging\ExceptionHandling.Logging.csproj", "{EC311AD3-0A26-4808-901B-A983E97E5790}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandling.WCF", "Src\WCF\ExceptionHandling.WCF.csproj", "{90CBF2D3-767E-4E3C-AF8C-AB3E5F17BE18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionHandling.WCF", "Src\WCF\ExceptionHandling.WCF.csproj", "{90CBF2D3-767E-4E3C-AF8C-AB3E5F17BE18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandling.Tests.VSTS", "Tests\ExceptionHandling\ExceptionHandling.Tests.VSTS.csproj", "{708C6E4C-1380-44A6-ABE9-0C25E633AD85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionHandling.Tests.VSTS", "Tests\ExceptionHandling\ExceptionHandling.Tests.VSTS.csproj", "{708C6E4C-1380-44A6-ABE9-0C25E633AD85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandling.Logging.Tests.VSTS", "Tests\Logging\ExceptionHandling.Logging.Tests.VSTS.csproj", "{5179BF96-3EDA-43DD-A636-D98E4C7BE7BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionHandling.Logging.Tests.VSTS", "Tests\Logging\ExceptionHandling.Logging.Tests.VSTS.csproj", "{5179BF96-3EDA-43DD-A636-D98E4C7BE7BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandling.WCF.Tests.VSTS", "Tests\WCF\ExceptionHandling.WCF.Tests.VSTS.csproj", "{F703A7CA-B0BB-4EA2-B918-E7BC05C52CD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionHandling.WCF.Tests.VSTS", "Tests\WCF\ExceptionHandling.WCF.Tests.VSTS.csproj", "{F703A7CA-B0BB-4EA2-B918-E7BC05C52CD7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Application Block", "Data Application Block", "{2D2F759F-93A2-4182-B298-DF44A27A77FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "..\..\Data\source\Src\Data\Data.csproj", "{3E49E5CF-3816-4174-ADCF-7154B94AB560}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common Infrastructure", "Common Infrastructure", "{2240653C-E69E-4F69-9332-0A42FC302EF9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "..\..\Common\source\Src\Common\Common.csproj", "{AA030A3F-ABED-4593-AF4C-B398097EF745}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logging Application Block", "Logging Application Block", "{098F5C96-2F3A-4F5A-9EA2-97DB5E1074DE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging", "..\..\Logging\source\Src\Logging\Logging.csproj", "{8B3BA986-2F53-43C7-AC1C-D2479A6D5B92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +76,18 @@ Global
 		{F703A7CA-B0BB-4EA2-B918-E7BC05C52CD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F703A7CA-B0BB-4EA2-B918-E7BC05C52CD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F703A7CA-B0BB-4EA2-B918-E7BC05C52CD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E49E5CF-3816-4174-ADCF-7154B94AB560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E49E5CF-3816-4174-ADCF-7154B94AB560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E49E5CF-3816-4174-ADCF-7154B94AB560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E49E5CF-3816-4174-ADCF-7154B94AB560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA030A3F-ABED-4593-AF4C-B398097EF745}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA030A3F-ABED-4593-AF4C-B398097EF745}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA030A3F-ABED-4593-AF4C-B398097EF745}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA030A3F-ABED-4593-AF4C-B398097EF745}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B3BA986-2F53-43C7-AC1C-D2479A6D5B92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B3BA986-2F53-43C7-AC1C-D2479A6D5B92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B3BA986-2F53-43C7-AC1C-D2479A6D5B92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B3BA986-2F53-43C7-AC1C-D2479A6D5B92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,9 +100,11 @@ Global
 		{708C6E4C-1380-44A6-ABE9-0C25E633AD85} = {DCC5D994-8B8A-49D3-A32B-C3E512670CEA}
 		{5179BF96-3EDA-43DD-A636-D98E4C7BE7BC} = {DCC5D994-8B8A-49D3-A32B-C3E512670CEA}
 		{F703A7CA-B0BB-4EA2-B918-E7BC05C52CD7} = {DCC5D994-8B8A-49D3-A32B-C3E512670CEA}
+		{3E49E5CF-3816-4174-ADCF-7154B94AB560} = {2D2F759F-93A2-4182-B298-DF44A27A77FB}
+		{AA030A3F-ABED-4593-AF4C-B398097EF745} = {2240653C-E69E-4F69-9332-0A42FC302EF9}
+		{8B3BA986-2F53-43C7-AC1C-D2479A6D5B92} = {098F5C96-2F3A-4F5A-9EA2-97DB5E1074DE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		Microsoft.Practices.EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\Microsoft.Practices.EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\Microsoft.Practices.EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45;packages\Microsoft.Practices.EnterpriseLibrary.Common.6.0.1304.10000\lib\NET45
 		SolutionGuid = {EB3DF8C9-FF22-4F02-AF24-D8C16194ED88}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution

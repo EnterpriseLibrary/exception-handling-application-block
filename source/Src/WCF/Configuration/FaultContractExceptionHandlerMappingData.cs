@@ -1,14 +1,14 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Collections.Generic;
 using System.Text;
-using EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
 using System.Configuration;
-using EnterpriseLibrary.Common.Configuration.Design;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Design;
 using System.ComponentModel;
 
-namespace EnterpriseLibrary.ExceptionHandling.WCF.Configuration
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF.Configuration
 {
     /// <summary>
     /// Represents a mapping for a fault contract property from either an exception property or a GUID.

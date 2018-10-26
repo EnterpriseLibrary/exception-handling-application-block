@@ -1,13 +1,13 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Configuration;
-using EnterpriseLibrary.Common.Configuration;
-using EnterpriseLibrary.Common.Utility;
-using EnterpriseLibrary.ExceptionHandling.Configuration;
-using EnterpriseLibrary.ExceptionHandling.Properties;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Common.Utility;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Properties;
 
-namespace EnterpriseLibrary.ExceptionHandling
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling
 {
     /// <summary>
     /// Factory for <see cref="ExceptionPolicyDefinition"/> objects. This class is responsible for creating all the internal

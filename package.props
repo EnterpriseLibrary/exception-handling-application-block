@@ -17,12 +17,14 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <SystemConfigurationConfigurationManagerVersion>4.4.*</SystemConfigurationConfigurationManagerVersion>
+    <SystemConfigurationConfigurationManagerVersion>4.5.*</SystemConfigurationConfigurationManagerVersion>
+    <SystemSecurityPermissionsVersion>4.5.*</SystemSecurityPermissionsVersion>
+    <SystemSecurityPrincipalWindowsVersion>4.5.*</SystemSecurityPrincipalWindowsVersion>
   </PropertyGroup>
 
   <PropertyGroup>
     <!--In order to debug the EntLib dependencies open 'ExceptionHandling (With Dependencies).sln' and change 'EntLibDependencyType' value to Project -->
-    <EntLibDependencyType>Package</EntLibDependencyType>
+    <EntLibDependencyType>Project</EntLibDependencyType>
     <EntLibCommonVersion>6.1.*</EntLibCommonVersion>
     <EntLibLoggingVersion>6.1.*</EntLibLoggingVersion>
   </PropertyGroup>

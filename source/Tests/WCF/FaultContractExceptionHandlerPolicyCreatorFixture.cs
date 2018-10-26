@@ -1,12 +1,12 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
-using EnterpriseLibrary.Common.Configuration;
-using EnterpriseLibrary.ExceptionHandling.Configuration;
-using EnterpriseLibrary.ExceptionHandling.WCF.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace EnterpriseLibrary.ExceptionHandling.WCF.Tests
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF.Tests
 {
     [TestClass]
     public class FaultContractExceptionHandlerPolicyCreatorFixture

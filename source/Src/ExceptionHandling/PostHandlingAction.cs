@@ -1,6 +1,6 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
-namespace EnterpriseLibrary.ExceptionHandling
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling
 {
     /// <summary>
     /// Determines what action should occur after an exception is handled by the configured exception handling chain. 

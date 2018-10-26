@@ -1,13 +1,13 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Configuration;
-using EnterpriseLibrary.Common.Configuration;
-using EnterpriseLibrary.Common.TestSupport.ContextBase;
-using EnterpriseLibrary.ExceptionHandling.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Common.TestSupport.ContextBase;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace EnterpriseLibrary.ExceptionHandling.Tests.ExceptionPolicyFactoryFixture
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests.ExceptionPolicyFactoryFixture
 {
     [TestClass]
     public class when_creating_factory_with_null_configuration_access : ArrangeActAssert

@@ -9,11 +9,11 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <AssemblyName>EnterpriseLibrary.ExceptionHandling</AssemblyName>
-    <RootNamespace>EnterpriseLibrary.ExceptionHandling</RootNamespace>
+    <AssemblyName>Microsoft.Practices.EnterpriseLibrary.ExceptionHandling</AssemblyName>
+    <RootNamespace>Microsoft.Practices.EnterpriseLibrary.ExceptionHandling</RootNamespace>
     <AssemblyTitle>Enterprise Library Logging Application Block</AssemblyTitle>
 
-    <PackageId>EnterpriseLibrary.ExceptionHandling</PackageId>
+    <PackageId>Microsoft.Practices.EnterpriseLibrary.ExceptionHandling</PackageId>
     <Title>Exception Handling Application Block</Title>
     <Description>The Exception Handling Application Block helps developers create a consistent strategy for processing exceptions that occur in various architectural layers of an enterprise application.</Description>
     <Summary>The Exception Handling Application Block helps developers create a consistent strategy for processing exceptions that occur in various architectural layers of an enterprise application.</Summary>
@@ -30,7 +30,7 @@
 
   <ItemGroup>
     <ProjectReference Include="$(EntLibCommon)" Condition="Exists('$(EntLibCommon)') AND '$(EntLibDependencyType)' == 'Project'" />
-    <PackageReference Include="EnterpriseLibrary.Common" Version="$(EntLibCommonVersion)" Condition="!Exists('$(EntLibCommon)') OR '$(EntLibDependencyType)' == 'Package'" />
+    <PackageReference Include="Microsoft.Practices.EnterpriseLibrary.Common" Version="$(EntLibCommonVersion)" Condition="!Exists('$(EntLibCommon)') OR '$(EntLibDependencyType)' == 'Package'" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netcoreapp2.0'">
@@ -126,7 +126,7 @@
     <RunFxCop>false</RunFxCop>
     <FxCopRules>-Microsoft.Design#CA2210</FxCopRules>
     <Prefer32Bit>false</Prefer32Bit>
-    <CodeAnalysisRuleSet>..\..\EnterpriseLibrary.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\..\Microsoft.Practices.EnterpriseLibrary.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">

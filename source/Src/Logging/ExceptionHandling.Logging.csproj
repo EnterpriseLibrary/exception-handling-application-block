@@ -9,11 +9,11 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <AssemblyName>EnterpriseLibrary.ExceptionHandling.Logging</AssemblyName>
-    <RootNamespace>EnterpriseLibrary.ExceptionHandling.Logging</RootNamespace>
+    <AssemblyName>Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging</AssemblyName>
+    <RootNamespace>Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging</RootNamespace>
     <AssemblyTitle>Exception Handling Application Block Logging Handler</AssemblyTitle>
 
-    <PackageId>EnterpriseLibrary.ExceptionHandling.Logging</PackageId>
+    <PackageId>Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging</PackageId>
     <Title>Exception Handling Application Block Logging Handler</Title>
     <Description>This exception handler lets you log formatted exception information in locations specified in the configuration file.</Description>
     <Summary>This exception handler lets you log formatted exception information in locations specified in the configuration file.</Summary>
@@ -31,10 +31,10 @@
 
   <ItemGroup>
     <ProjectReference Include="$(EntLibCommon)" Condition="Exists('$(EntLibCommon)') AND '$(EntLibDependencyType)' == 'Project'" />
-    <PackageReference Include="EnterpriseLibrary.Common" Version="$(EntLibCommonVersion)" Condition="!Exists('$(EntLibCommon)') OR '$(EntLibDependencyType)' == 'Package'" />
+    <PackageReference Include="Microsoft.Practices.EnterpriseLibrary.Common" Version="$(EntLibCommonVersion)" Condition="!Exists('$(EntLibCommon)') OR '$(EntLibDependencyType)' == 'Package'" />
 
     <ProjectReference Include="$(EntLibLogging)" Condition="Exists('$(EntLibLogging)') AND '$(EntLibDependencyType)' == 'Project'" />
-    <PackageReference Include="EnterpriseLibrary.Logging" Version="$(EntLibLoggingVersion)" Condition="!Exists('$(EntLibLogging)') OR '$(EntLibDependencyType)' == 'Package'" />
+    <PackageReference Include="Microsoft.Practices.EnterpriseLibrary.Logging" Version="$(EntLibLoggingVersion)" Condition="!Exists('$(EntLibLogging)') OR '$(EntLibDependencyType)' == 'Package'" />
 
     <ProjectReference Include="..\ExceptionHandling\ExceptionHandling.csproj" />
   </ItemGroup>
@@ -132,7 +132,7 @@
     <RunFxCop>false</RunFxCop>
     <FxCopRules>-Microsoft.Design#CA2210</FxCopRules>
     <Prefer32Bit>false</Prefer32Bit>
-    <CodeAnalysisRuleSet>..\..\EnterpriseLibrary.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\..\Microsoft.Practices.EnterpriseLibrary.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">

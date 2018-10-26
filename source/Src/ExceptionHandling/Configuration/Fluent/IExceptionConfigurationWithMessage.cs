@@ -1,10 +1,10 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
-using EnterpriseLibrary.ExceptionHandling;
-using EnterpriseLibrary.ExceptionHandling.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration;
 
-namespace EnterpriseLibrary.Common.Configuration.Fluent
+namespace Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent
 {
     /// <summary>
     /// Defines interface for adding messages when configuring a <see cref="ReplaceHandler"/> for an exception.

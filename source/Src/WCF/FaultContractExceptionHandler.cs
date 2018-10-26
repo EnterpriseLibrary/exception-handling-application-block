@@ -1,14 +1,14 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Collections.Specialized;
 using System.Globalization;
 using System.Reflection;
-using EnterpriseLibrary.Common.Configuration;
-using EnterpriseLibrary.Common.Utility;
-using EnterpriseLibrary.ExceptionHandling.WCF.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Common.Utility;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF.Configuration;
 
-namespace EnterpriseLibrary.ExceptionHandling.WCF
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF
 {
     /// <summary>
     /// Exception handler that gets the configured fault contract type and 

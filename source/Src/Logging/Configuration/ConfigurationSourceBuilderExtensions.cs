@@ -1,16 +1,16 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using EnterpriseLibrary.Common.Configuration.Fluent;
-using EnterpriseLibrary.ExceptionHandling.Logging.Configuration;
-using EnterpriseLibrary.ExceptionHandling;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Fluent;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
 using System.Diagnostics;
-using EnterpriseLibrary.Common.Properties;
+using Microsoft.Practices.EnterpriseLibrary.Common.Properties;
 
-namespace EnterpriseLibrary.Common.Configuration
+namespace Microsoft.Practices.EnterpriseLibrary.Common.Configuration
 {
     /// <summary>
     /// Extensions to <see cref="IExceptionConfigurationAddExceptionHandlers"/> that support logging exceptions.

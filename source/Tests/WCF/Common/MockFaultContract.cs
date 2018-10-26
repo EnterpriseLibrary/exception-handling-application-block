@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Runtime.Serialization;
 using System.Collections;
 
-namespace EnterpriseLibrary.ExceptionHandling.WCF.Tests
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF.Tests
 {
     [DataContract(Namespace = "http://FaultContracts/2006/03/MockFaultContract")]
     public class MockFaultContract 

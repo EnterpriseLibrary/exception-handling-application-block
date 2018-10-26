@@ -1,11 +1,11 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Collections.Specialized;
 using System.IO;
 using System.Reflection;
 
-namespace EnterpriseLibrary.ExceptionHandling.Tests
+namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
 {
 
     public class MockTextExceptionFormatter : TextExceptionFormatter
