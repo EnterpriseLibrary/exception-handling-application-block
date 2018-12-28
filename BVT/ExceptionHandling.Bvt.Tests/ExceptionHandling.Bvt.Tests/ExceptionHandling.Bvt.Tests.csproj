@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\..\..\package.props" />
 
   <PropertyGroup>
@@ -8,9 +8,9 @@
     <AssemblyVersion>$(MajorVersion).0.0.0</AssemblyVersion>
     <FileVersion>$(Version).$(Revision)</FileVersion>
 
-    <AssemblyName>Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Bvt.Tests</AssemblyName>
-    <RootNamespace>Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Bvt.Tests</RootNamespace>
-    <AssemblyTitle>Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Bvt.Tests</AssemblyTitle>
+    <AssemblyName>$(PreAssemblyName).ExceptionHandling.Bvt.Tests</AssemblyName>
+    <RootNamespace>$(PreAssemblyName).ExceptionHandling.Bvt.Tests</RootNamespace>
+    <AssemblyTitle>$(PreAssemblyName).ExceptionHandling.Bvt.Tests</AssemblyTitle>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,15 +21,15 @@
 
   <PropertyGroup>
     <EntLibCommon>..\..\..\Common\source\Src\Common\Common.csproj</EntLibCommon>
-    <EntLibCommon>..\..\..\Logging\source\Src\Logging\Logging.csproj</EntLibCommon>
+    <EntLibLogging>..\..\..\Logging\source\Src\Logging\Logging.csproj</EntLibLogging>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="$(EntLibCommon)" Condition="Exists('$(EntLibCommon)') AND '$(EntLibDependencyType)' == 'Project'" />
-    <PackageReference Include="Microsoft.Practices.EnterpriseLibrary.Common" Version="$(EntLibCommonVersion)" Condition="!Exists('$(EntLibCommon)') OR '$(EntLibDependencyType)' == 'Package'" />
+    <PackageReference Include="$(PrePackageName).Common$(PostPackageName)" Version="$(EntLibCommonVersion)" Condition="!Exists('$(EntLibCommon)') OR '$(EntLibDependencyType)' == 'Package'" />
 
     <ProjectReference Include="$(EntLibLogging)" Condition="Exists('$(EntLibLogging)') AND '$(EntLibDependencyType)' == 'Project'" />
-    <PackageReference Include="Microsoft.Practices.EnterpriseLibrary.Logging" Version="$(EntLibLoggingVersion)" Condition="!Exists('$(EntLibLogging)') OR '$(EntLibDependencyType)' == 'Package'" />
+    <PackageReference Include="$(PrePackageName).Logging$(PostPackageName)" Version="$(EntLibLoggingVersion)" Condition="!Exists('$(EntLibLogging)') OR '$(EntLibDependencyType)' == 'Package'" />
 
     <ProjectReference Include="..\..\..\source\Src\ExceptionHandling\ExceptionHandling.csproj" />
     <ProjectReference Include="..\..\..\source\Src\Logging\ExceptionHandling.Logging.csproj" />

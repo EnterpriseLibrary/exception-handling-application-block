@@ -78,10 +78,6 @@ Global
 		{5179BF96-3EDA-43DD-A636-D98E4C7BE7BC} = {DCC5D994-8B8A-49D3-A32B-C3E512670CEA}
 		{F703A7CA-B0BB-4EA2-B918-E7BC05C52CD7} = {DCC5D994-8B8A-49D3-A32B-C3E512670CEA}
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		Microsoft.Practices.EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\Microsoft.Practices.EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\Microsoft.Practices.EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45;packages\Microsoft.Practices.EnterpriseLibrary.Common.6.0.1304.10000\lib\NET45
-		SolutionGuid = {EB3DF8C9-FF22-4F02-AF24-D8C16194ED88}
-	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = ExceptionHandling.VSTS.vsmdi
 	EndGlobalSection

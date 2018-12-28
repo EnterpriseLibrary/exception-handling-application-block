@@ -9,11 +9,11 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <AssemblyName>Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF</AssemblyName>
-    <RootNamespace>Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF</RootNamespace>
+    <AssemblyName>$(PreAssemblyName).ExceptionHandling.WCF</AssemblyName>
+    <RootNamespace>$(PreAssemblyName).ExceptionHandling.WCF</RootNamespace>
     <AssemblyTitle>Enterprise Library Exception Handling WCF Provider</AssemblyTitle>
 
-    <PackageId>Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF</PackageId>
+    <PackageId>$(PreAssemblyName).ExceptionHandling.WCF</PackageId>
     <Title>Enterprise Library Exception Handling WCF Provider</Title>
     <Description>Enterprise Library Exception Handling WCF Provider</Description>
     <Summary>Enterprise Library Exception Handling WCF Provider</Summary>
@@ -26,24 +26,24 @@
 
   <PropertyGroup>
     <EntLibCommon>..\..\..\..\Common\source\Src\Common\Common.csproj</EntLibCommon>
-    <EntLibCommon>..\..\..\..\Logging\source\Src\Logging\Logging.csproj</EntLibCommon>
+    <EntLibLogging>..\..\..\..\Logging\source\Src\Logging\Logging.csproj</EntLibLogging>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="$(EntLibCommon)" Condition="Exists('$(EntLibCommon)') AND '$(EntLibDependencyType)' == 'Project'" />
-    <PackageReference Include="Microsoft.Practices.EnterpriseLibrary.Common" Version="$(EntLibCommonVersion)" Condition="!Exists('$(EntLibCommon)') OR '$(EntLibDependencyType)' == 'Package'" />
+    <PackageReference Include="$(PrePackageName).Common$(PostPackageName)" Version="$(EntLibCommonVersion)" Condition="!Exists('$(EntLibCommon)') OR '$(EntLibDependencyType)' == 'Package'" />
 
     <ProjectReference Include="$(EntLibLogging)" Condition="Exists('$(EntLibLogging)') AND '$(EntLibDependencyType)' == 'Project'" />
-    <PackageReference Include="Microsoft.Practices.EnterpriseLibrary.Logging" Version="$(EntLibLoggingVersion)" Condition="!Exists('$(EntLibLogging)') OR '$(EntLibDependencyType)' == 'Package'" />
+    <PackageReference Include="$(PrePackageName).Logging$(PostPackageName)" Version="$(EntLibLoggingVersion)" Condition="!Exists('$(EntLibLogging)') OR '$(EntLibDependencyType)' == 'Package'" />
 
     <ProjectReference Include="..\ExceptionHandling\ExceptionHandling.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netcoreapp2.0'">
+  <ItemGroup Condition="$(TargetFramework.StartsWith('netstandard')) OR $(TargetFramework.StartsWith('netcoreapp'))">
     
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0' AND '$(TargetFramework)' != 'netcoreapp2.0'">
+  <ItemGroup Condition="!$(TargetFramework.StartsWith('netstandard')) AND !$(TargetFramework.StartsWith('netcoreapp'))">
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Runtime.Serialization" />
@@ -105,11 +105,11 @@
     </Content>
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netcoreapp2.0'">
+  <ItemGroup Condition="$(TargetFramework.StartsWith('netstandard')) OR $(TargetFramework.StartsWith('netcoreapp'))">
 
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0' AND '$(TargetFramework)' != 'netcoreapp2.0'">
+  <ItemGroup Condition="!$(TargetFramework.StartsWith('netstandard')) AND !$(TargetFramework.StartsWith('netcoreapp'))">
 
   </ItemGroup>
 
@@ -126,7 +126,7 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <DocumentationFile>$(SolutionDir)..\bin\Debug\$(AssemblyName).xml</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
-    <CodeAnalysisRuleSet>..\..\Microsoft.Practices.EnterpriseLibrary.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\..\EnterpriseLibrary.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
