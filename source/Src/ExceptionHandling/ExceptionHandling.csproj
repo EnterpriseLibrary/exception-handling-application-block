@@ -11,7 +11,7 @@
     <RootNamespace>$(PreAssemblyName).ExceptionHandling</RootNamespace>
     <AssemblyTitle>Enterprise Library Logging Application Block</AssemblyTitle>
 
-    <PackageId>$(PrePackageName).ExceptionHandling</PackageId>
+    <PackageId>$(PrePackageName).ExceptionHandling$(PostPackageName)</PackageId>
     <Title>Exception Handling Application Block</Title>
     <Description>The Exception Handling Application Block helps developers create a consistent strategy for processing exceptions that occur in various architectural layers of an enterprise application.</Description>
     <Summary>The Exception Handling Application Block helps developers create a consistent strategy for processing exceptions that occur in various architectural layers of an enterprise application.</Summary>
