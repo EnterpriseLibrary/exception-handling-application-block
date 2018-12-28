@@ -13,7 +13,7 @@
     <RootNamespace>$(PreAssemblyName).ExceptionHandling.WCF</RootNamespace>
     <AssemblyTitle>Enterprise Library Exception Handling WCF Provider</AssemblyTitle>
 
-    <PackageId>$(PreAssemblyName).ExceptionHandling.WCF</PackageId>
+    <PackageId>$(PrePackageName).ExceptionHandling.WCF</PackageId>
     <Title>Enterprise Library Exception Handling WCF Provider</Title>
     <Description>Enterprise Library Exception Handling WCF Provider</Description>
     <Summary>Enterprise Library Exception Handling WCF Provider</Summary>

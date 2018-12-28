@@ -13,7 +13,7 @@
     <RootNamespace>$(PreAssemblyName).ExceptionHandling.Logging</RootNamespace>
     <AssemblyTitle>Exception Handling Application Block Logging Handler</AssemblyTitle>
 
-    <PackageId>$(PreAssemblyName).ExceptionHandling.Logging</PackageId>
+    <PackageId>$(PrePackageName).ExceptionHandling.Logging</PackageId>
     <Title>Exception Handling Application Block Logging Handler</Title>
     <Description>This exception handler lets you log formatted exception information in locations specified in the configuration file.</Description>
     <Summary>This exception handler lets you log formatted exception information in locations specified in the configuration file.</Summary>
