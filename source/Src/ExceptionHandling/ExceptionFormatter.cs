@@ -299,7 +299,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling
             string threadIdentity = String.Empty;
             try
             {
-                threadIdentity = Thread.CurrentPrincipal.Identity.Name;
+                threadIdentity = Thread.CurrentPrincipal?.Identity?.Name;
             }
             catch (SecurityException)
             {
