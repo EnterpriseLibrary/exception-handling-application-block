@@ -1,6 +1,14 @@
 <Project>
   <Import Project="version.props" />
 
+  <ItemGroup>
+    <Content Include="..\..\..\build\Assets\icon.png">
+      <Pack>true</Pack>
+      <Visible>False</Visible>
+      <PackagePath></PackagePath>
+    </Content>
+  </ItemGroup>
+    
   <PropertyGroup>
     <Version>$(MajorVersion).$(MinorVersion).$(ReleaseVersion)</Version>
     <PreAssemblyName>Microsoft.Practices.EnterpriseLibrary</PreAssemblyName>
@@ -17,7 +25,7 @@
     <PackageProjectUrl>https://github.com/EnterpriseLibrary/exception-handling-application-block</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 
-    <RepositoryUrl>https://github.com/EnterpriseLibrary/exception-handling-application-block</RepositoryUrl>
+    <PackageIcon>icon.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
