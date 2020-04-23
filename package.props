@@ -16,7 +16,7 @@
     <PostPackageName>.NetCore</PostPackageName>
     <PackageReleaseNotes>This package is distributed as .NET Standard 2.0, .NET Core 2.0, .NET 4.0, 4.5, 4.6, 4.7 package.</PackageReleaseNotes>
 
-    <SemanticVersionSuffix>-rc</SemanticVersionSuffix>
+    <SemanticVersionSuffix></SemanticVersionSuffix>
     <PackageVersion>$(Version)$(SemanticVersionSuffix)</PackageVersion>
     <Authors>Enterprise Library Open Source Project</Authors>
     <Copyright>Copyright © Microsoft 2008</Copyright>
@@ -38,8 +38,8 @@
   <PropertyGroup>
     <!--In order to debug the EntLib dependencies open 'ExceptionHandling (With Dependencies).sln' and change 'EntLibDependencyType' value to Project -->
     <EntLibDependencyType>Package</EntLibDependencyType>
-    <EntLibCommonVersion>6.1.15-rc</EntLibCommonVersion>
-    <EntLibLoggingVersion>6.1.7-rc</EntLibLoggingVersion>
+    <EntLibCommonVersion>6.*</EntLibCommonVersion>
+    <EntLibLoggingVersion>6.*</EntLibLoggingVersion>
   </PropertyGroup>
 
 </Project>
