@@ -38,8 +38,8 @@
   <PropertyGroup>
     <!--In order to debug the EntLib dependencies open 'ExceptionHandling (With Dependencies).sln' and change 'EntLibDependencyType' value to Project -->
     <EntLibDependencyType>Package</EntLibDependencyType>
-    <EntLibCommonVersion>6.*</EntLibCommonVersion>
-    <EntLibLoggingVersion>6.*</EntLibLoggingVersion>
+    <EntLibCommonVersion>6.3.0</EntLibCommonVersion>
+    <EntLibLoggingVersion>6.3.0</EntLibLoggingVersion>
   </PropertyGroup>
 
 </Project>
