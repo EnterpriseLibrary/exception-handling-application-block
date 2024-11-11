@@ -314,7 +314,9 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling
             string windowsIdentity = String.Empty;
             try
             {
+#if !NET8_0
                 windowsIdentity = WindowsIdentity.GetCurrent().Name;
+#endif
             }
             catch (SecurityException)
             {

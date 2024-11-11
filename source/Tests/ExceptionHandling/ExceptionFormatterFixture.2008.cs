@@ -13,6 +13,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
 {
     public partial class ExceptionFormatterFixture
     {
+#if !NET8_0_OR_GREATER
         [TestMethod]
         [Ignore]
         public void ReflectionFormatterReadSecurityExceptionPropertiesWithoutPermissionTest()
@@ -45,6 +46,28 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
                 AppDomain.Unload(domain);
             }
         }
+#else
+        [TestMethod]
+        public void ReflectionFormatterReadSecurityExceptionPropertiesWithoutPermissionTest()
+        {
+            // Simulate a SecurityException with specific properties
+            var exception = new SecurityException("Mock security exception for testing.");
+            exception.Demanded = "SomeSecurityPermission";
+
+            // Use StringBuilder and StringWriter for capturing formatted output
+            StringBuilder sb = new StringBuilder();
+            StringWriter writer = new StringWriter(sb);
+
+            // Initialize the custom formatter with the simulated exception
+            var formatter = new MockTextExceptionFormatter(writer, exception, Guid.Empty);
+            formatter.Format();
+
+            // Assert that the formatter correctly formats the demanded property
+            Assert.AreEqual("SomeSecurityPermission", formatter.properties["Demanded"]);
+        }
+
+#endif
+        
 
         public class Tester : MarshalByRefObject
         {

@@ -80,7 +80,10 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
             Assert.AreEqual(null, formatter.properties[message]);
         }
 
-        [TestMethod]
+
+
+#if !NET8_0_OR_GREATER
+ [TestMethod]
         public void CanGetMachineNameWithoutSecurity()
         {
             var evidence = new Evidence();
@@ -134,6 +137,38 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
             }
         }
 
+#else
+        [TestMethod]
+        public void CanGetMachineNameWithoutSecurity()
+        {
+            // Directly create an instance of ExceptionFormatterTester
+            var instance = new ExceptionFormatterTester();
+
+            // Call the DoTest method, which should try to access MachineName and handle any exceptions
+            var formattedMessage = instance.DoTest();
+
+            // Check that the message includes the expected identity and/or permission denied information.
+            // Replace "machineName" and "permissionDenied" with actual expected values or variables.
+            Assert.IsTrue(formattedMessage.Contains("machineName : permissionDenied"));
+        }
+
+
+        [TestMethod]
+        public void CanGetWindowsIdentityWithoutSecurity()
+        {
+            // Directly create an instance of ExceptionFormatterTester
+            var instance = new ExceptionFormatterTester();
+
+            // Call the DoTest method, which is expected to handle WindowsIdentity and provide a formatted message
+            var formattedMessage = instance.DoTest();
+
+            // Check that the message contains the expected identity and permission information
+            // Replace "windowsIdentity" and "permissionDenied" with the actual expected values or variables
+            Assert.IsTrue(formattedMessage.Contains("windowsIdentity : permissionDenied"));
+        }
+
+#endif
+        
         public class ExceptionFormatterTester : MarshalByRefObject
         {
             public string DoTest()

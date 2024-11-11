@@ -39,6 +39,8 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling
         {
         }
 
+
+#if !NET8_0_OR_GREATER
         /// <summary>
         /// Initializes with serialized data.
         /// </summary>
@@ -49,5 +51,6 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling
             base(info, context)
         {
         }
+#endif
     }
 }
