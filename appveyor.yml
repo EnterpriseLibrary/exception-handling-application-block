@@ -3,9 +3,6 @@ configuration: Release
 platform: Any CPU
 skip_tags: true
 
-services:
-  
-
 install:
   - ps: $env:version_file_path = ".\version.props"
   - ps: gitversion /output buildserver
@@ -25,19 +22,17 @@ dotnet_csproj:
   patch: false
 
 before_build:
-- cmd: dotnet restore "source\ExceptionHandling.sln"
+  - cmd: dotnet restore "source\ExceptionHandling.sln"
 
 build:
   project: source\ExceptionHandling.sln
   parallel: true
   verbosity: minimal
 
-after_build:
-
 after_test:
   - cmd: dotnet restore "BVT\ExceptionHandling.Bvt.Tests\ExceptionHandling.Bvt.Tests.sln"
   - cmd: msbuild "BVT\ExceptionHandling.Bvt.Tests\ExceptionHandling.Bvt.Tests.sln" /m /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-  - cmd: dotnet test "BVT\ExceptionHandling.Bvt.Tests\ExceptionHandling.Bvt.Tests\ExceptionHandling.Bvt.Tests.csproj" --configuration Release --no-build /property:Platform=AnyCPU
+  - cmd: dotnet test "BVT\ExceptionHandling.Bvt.Tests\ExceptionHandling.Bvt.Tests\ExceptionHandling.Bvt.Tests.csproj" --configuration Release --no-build -p:Platform="AnyCPU"
 
 artifacts:
 - path: 'bin\Release\EnterpriseLibrary.ExceptionHandling.*.nupkg'
