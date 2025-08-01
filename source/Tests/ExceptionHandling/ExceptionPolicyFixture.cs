@@ -1,7 +1,12 @@
 // Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Configuration;
+using System.IO;
 using System.Security;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
@@ -12,7 +17,12 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
         [TestInitialize]
         public void Initialize()
         {
-            ExceptionPolicy.SetExceptionManager(new ExceptionPolicyFactory().CreateManager(), false);
+            string configPath = Path.Combine(AppContext.BaseDirectory, "Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests.dll.config");
+
+            var source = new FileConfigurationSource(configPath);   
+
+            var policyFactory = new ExceptionPolicyFactory(source);
+            ExceptionPolicy.SetExceptionManager(policyFactory.CreateManager(), false);
         }
 
         [TestCleanup]
