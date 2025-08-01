@@ -150,6 +150,8 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
 
             // Check that the message includes the expected identity and/or permission denied information.
             // Replace "machineName" and "permissionDenied" with actual expected values or variables.
+            Console.WriteLine("formattedMessage:" + formattedMessage);
+
             Assert.IsTrue(formattedMessage.Contains("machineName : permissionDenied"));
         }
 
