@@ -1,92 +1,96 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="..\..\..\package.props" />
+	<Import Project="..\..\..\package.props" />
 
-  <PropertyGroup>
-    <TargetFrameworks>net47;net8.0</TargetFrameworks>
-    <IsPackable>false</IsPackable>
+	<PropertyGroup>
+		<TargetFrameworks>net47;net8.0</TargetFrameworks>
+		<IsPackable>false</IsPackable>
 
-    <AssemblyVersion>$(MajorVersion).0.0.0</AssemblyVersion>
-    <FileVersion>$(Version).$(Revision)</FileVersion>
+		<AssemblyVersion>$(MajorVersion).0.0.0</AssemblyVersion>
+		<FileVersion>$(Version).$(Revision)</FileVersion>
 
-    <AssemblyName>$(PreAssemblyName).ExceptionHandling.Logging.Tests</AssemblyName>
-    <RootNamespace>$(PreAssemblyName).ExceptionHandling.Logging.Tests</RootNamespace>
-    <AssemblyTitle>Enterprise Library Exception Handling Logging Provider Tests</AssemblyTitle>
-  </PropertyGroup>
+		<AssemblyName>$(PreAssemblyName).ExceptionHandling.Logging.Tests</AssemblyName>
+		<RootNamespace>$(PreAssemblyName).ExceptionHandling.Logging.Tests</RootNamespace>
+		<AssemblyTitle>Enterprise Library Exception Handling Logging Provider Tests</AssemblyTitle>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
-    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
-    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+		<PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
+		<PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+	</ItemGroup>
 
-  <PropertyGroup>
-    <EntLibCommon>..\..\..\..\Common\source\Src\Common\Common.csproj</EntLibCommon>
-    <EntLibLogging>..\..\..\..\Logging\source\Src\Logging\Logging.csproj</EntLibLogging>
-  </PropertyGroup>
+	<PropertyGroup>
+		<EntLibCommon>..\..\..\..\Common\source\Src\Common\Common.csproj</EntLibCommon>
+		<EntLibLogging>..\..\..\..\Logging\source\Src\Logging\Logging.csproj</EntLibLogging>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="$(EntLibCommon)" Condition="Exists('$(EntLibCommon)') AND '$(EntLibDependencyType)' == 'Project'" />
-    <PackageReference Include="$(PrePackageName).Common$(PostPackageName)" Version="$(EntLibCommonVersion)" Condition="!Exists('$(EntLibCommon)') OR '$(EntLibDependencyType)' == 'Package'" />
+	<ItemGroup>
+		<ProjectReference Include="$(EntLibCommon)" Condition="Exists('$(EntLibCommon)') AND '$(EntLibDependencyType)' == 'Project'" />
+		<PackageReference Include="$(PrePackageName).Common$(PostPackageName)" Version="$(EntLibCommonVersion)" Condition="!Exists('$(EntLibCommon)') OR '$(EntLibDependencyType)' == 'Package'" />
 
-    <ProjectReference Include="$(EntLibLogging)" Condition="Exists('$(EntLibLogging)') AND '$(EntLibDependencyType)' == 'Project'" />
-    <PackageReference Include="$(PrePackageName).Logging$(PostPackageName)" Version="$(EntLibLoggingVersion)" Condition="!Exists('$(EntLibLogging)') OR '$(EntLibDependencyType)' == 'Package'" />
+		<ProjectReference Include="$(EntLibLogging)" Condition="Exists('$(EntLibLogging)') AND '$(EntLibDependencyType)' == 'Project'" />
+		<PackageReference Include="$(PrePackageName).Logging$(PostPackageName)" Version="$(EntLibLoggingVersion)" Condition="!Exists('$(EntLibLogging)') OR '$(EntLibDependencyType)' == 'Package'" />
 
-    <ProjectReference Include="..\..\Src\ExceptionHandling\ExceptionHandling.csproj" />
-    <ProjectReference Include="..\..\Src\Logging\ExceptionHandling.Logging.csproj" />
-  </ItemGroup>
+		<ProjectReference Include="..\..\Src\ExceptionHandling\ExceptionHandling.csproj" />
+		<ProjectReference Include="..\..\Src\Logging\ExceptionHandling.Logging.csproj" />
+	</ItemGroup>
 
-  <ItemGroup Condition="$(TargetFramework.StartsWith('netstandard')) OR $(TargetFramework.StartsWith('netcoreapp'))">
+	<ItemGroup Condition="$(TargetFramework.StartsWith('netstandard')) OR $(TargetFramework.StartsWith('netcoreapp'))">
 
-  </ItemGroup>
+	</ItemGroup>
 
-  <ItemGroup Condition="!$(TargetFramework.StartsWith('netstandard')) AND !$(TargetFramework.StartsWith('netcoreapp')) AND '$(TargetFramework)' != 'net8.0'">
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Configuration.Install" />
-    <Reference Include="System.Management" />
-  </ItemGroup>
+	<ItemGroup Condition="!$(TargetFramework.StartsWith('netstandard')) AND !$(TargetFramework.StartsWith('netcoreapp')) AND '$(TargetFramework)' != 'net8.0'">
+		<Reference Include="System.Configuration" />
+		<Reference Include="System.Configuration.Install" />
+		<Reference Include="System.Management" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Update="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Tests.dll.config">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\ExceptionHandling.licenseheader">
+			<Link>ExceptionHandling.licenseheader</Link>
+		</None>
 
-  <ItemGroup>
-     <None Include="..\..\ExceptionHandling.licenseheader">
-      <Link>ExceptionHandling.licenseheader</Link>
-    </None>
-	
-    <None Include="$(PreAssemblyName).ExceptionHandling.Logging.Tests.dll.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </None>
+		<None Include="$(PreAssemblyName).ExceptionHandling.Logging.Tests.dll.config">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<SubType>Designer</SubType>
+		</None>
 
-    <None Include="test.exe.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+		<None Include="test.exe.config">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
 
-  <ItemGroup Condition="$(TargetFramework.StartsWith('netstandard')) OR $(TargetFramework.StartsWith('netcoreapp'))">
-    
-  </ItemGroup>
+	<ItemGroup Condition="$(TargetFramework.StartsWith('netstandard')) OR $(TargetFramework.StartsWith('netcoreapp'))">
 
-  <ItemGroup Condition="!$(TargetFramework.StartsWith('netstandard')) AND !$(TargetFramework.StartsWith('netcoreapp'))">
+	</ItemGroup>
 
-  </ItemGroup>
+	<ItemGroup Condition="!$(TargetFramework.StartsWith('netstandard')) AND !$(TargetFramework.StartsWith('netcoreapp'))">
 
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>.\bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
-    <NoWarn></NoWarn>
-    <Prefer32Bit>false</Prefer32Bit>
-    <CodeAnalysisRuleSet>..\Tests.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
+	</ItemGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugSymbols>false</DebugSymbols>
-    <Optimize>true</Optimize>
-    <OutputPath>.\bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <NoWarn></NoWarn>
-    <Prefer32Bit>false</Prefer32Bit>
-    <CodeAnalysisRuleSet>..\Tests.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>.\bin\Debug\</OutputPath>
+		<DefineConstants>TRACE;DEBUG</DefineConstants>
+		<NoWarn></NoWarn>
+		<Prefer32Bit>false</Prefer32Bit>
+		<CodeAnalysisRuleSet>..\Tests.ruleset</CodeAnalysisRuleSet>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+		<DebugSymbols>false</DebugSymbols>
+		<Optimize>true</Optimize>
+		<OutputPath>.\bin\Release\</OutputPath>
+		<DefineConstants>TRACE</DefineConstants>
+		<NoWarn></NoWarn>
+		<Prefer32Bit>false</Prefer32Bit>
+		<CodeAnalysisRuleSet>..\Tests.ruleset</CodeAnalysisRuleSet>
+	</PropertyGroup>
 
 </Project>

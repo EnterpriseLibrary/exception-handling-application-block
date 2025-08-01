@@ -21,7 +21,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Tests
         [TestInitialize]
         public void Initialize()
         {
-            string configPath = Path.Combine(AppContext.BaseDirectory, "Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests.dll.config");
+            string configPath = Path.Combine(AppContext.BaseDirectory, "Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Tests.dll.config");
 
             var source = new FileConfigurationSource(configPath);
 
