@@ -2,6 +2,8 @@
 
 using System;
 using System.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using System.IO;
 using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration;
 using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests.Properties;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -16,7 +18,11 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
         [TestInitialize]
         public void Initialize()
         {
-            ExceptionPolicy.SetExceptionManager(new ExceptionPolicyFactory().CreateManager(), false);
+            string configPath = Path.Combine(AppContext.BaseDirectory, "Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests.dll.config");
+
+            var configSource = new FileConfigurationSource(configPath); 
+            var policyFactory = new ExceptionPolicyFactory(configSource);
+            ExceptionPolicy.SetExceptionManager(policyFactory.CreateManager(), false);
         }
 
         [TestCleanup]
