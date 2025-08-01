@@ -23,7 +23,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
 
             var entry = new ExceptionPolicyEntry(
                 typeof(Exception),
-                PostHandlingAction.None,
+                PostHandlingAction.ThrowNewException,
                 new IExceptionHandler[] { handler }
             );
 
