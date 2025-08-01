@@ -116,37 +116,43 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
         [TestMethod]
         public void CanOpenAndSaveWithWrapHandler()
         {
-            System.Configuration.Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-
-            config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-
             string configPath = Path.Combine(AppContext.BaseDirectory, "Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests.dll.config");
 
+            // Load and build manager
             var configSource = new FileConfigurationSource(configPath);
             var policyFactory = new ExceptionPolicyFactory(configSource);
             ExceptionPolicy.SetExceptionManager(policyFactory.CreateManager(), false);
 
-            ExceptionHandlingSettings settings = (ExceptionHandlingSettings)
-                configSource.GetSection(ExceptionHandlingSettings.SectionName);
-
-            WrapHandlerData data = (WrapHandlerData)settings.ExceptionPolicies.Get(wrapPolicy).ExceptionTypes.Get(exceptionType).ExceptionHandlers.Get(wrapHandler);
+            // Modify settings
+            var settings = (ExceptionHandlingSettings)configSource.GetSection(ExceptionHandlingSettings.SectionName);
+            var data = (WrapHandlerData)settings.ExceptionPolicies.Get(wrapPolicy)
+                        .ExceptionTypes.Get(exceptionType)
+                        .ExceptionHandlers.Get(wrapHandler);
             string oldName = data.Name;
             data.Name = newWrapHandler;
-            config.Save();
 
-            var reloadedConfigSource = new FileConfigurationSource(configPath);
-            settings = (ExceptionHandlingSettings)reloadedConfigSource.GetSection(ExceptionHandlingSettings.SectionName);
-            data = (WrapHandlerData)settings.ExceptionPolicies.Get(wrapPolicy).ExceptionTypes.Get(exceptionType).ExceptionHandlers.Get(newWrapHandler);
+            
+            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            config.Sections.Remove(ExceptionHandlingSettings.SectionName); // optional: avoid duplicates
+            config.Sections.Add(ExceptionHandlingSettings.SectionName, settings);
+            config.Save(ConfigurationSaveMode.Full);
+            ConfigurationManager.RefreshSection(ExceptionHandlingSettings.SectionName);
+
+            // Reload config after save
+            var reloadedSource = new FileConfigurationSource(configPath);
+            settings = (ExceptionHandlingSettings)reloadedSource.GetSection(ExceptionHandlingSettings.SectionName);
+            data = (WrapHandlerData)settings.ExceptionPolicies.Get(wrapPolicy)
+                        .ExceptionTypes.Get(exceptionType)
+                        .ExceptionHandlers.Get(newWrapHandler);
 
             Assert.IsNotNull(data);
-            Assert.AreEqual(data.Name, newWrapHandler);
+            Assert.AreEqual(newWrapHandler, data.Name);
 
-            // reset
-            config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            settings = (ExceptionHandlingSettings)config.Sections[ExceptionHandlingSettings.SectionName];
-            data = (WrapHandlerData)settings.ExceptionPolicies.Get(wrapPolicy).ExceptionTypes.Get(exceptionType).ExceptionHandlers.Get(newWrapHandler);
+            // Reset
             data.Name = oldName;
-            config.Save();
+            config.Sections.Remove(ExceptionHandlingSettings.SectionName);
+            config.Sections.Add(ExceptionHandlingSettings.SectionName, settings);
+            config.Save(ConfigurationSaveMode.Full);
             ConfigurationManager.RefreshSection(ExceptionHandlingSettings.SectionName);
         }
     }
