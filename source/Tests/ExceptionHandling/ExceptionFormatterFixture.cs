@@ -35,6 +35,9 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
         [TestMethod]
         public void AdditionalInfoTest()
         {
+#if NET8_0_OR_GREATER
+            Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity("TestUser"), null);
+#endif
             StringBuilder sb = new StringBuilder();
             StringWriter writer = new StringWriter(sb);
 
