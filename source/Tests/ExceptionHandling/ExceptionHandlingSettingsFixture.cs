@@ -134,8 +134,31 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
             
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             config.Sections.Remove(ExceptionHandlingSettings.SectionName); // optional: avoid duplicates
-            config.Sections.Add(ExceptionHandlingSettings.SectionName, settings);
-            config.Save(ConfigurationSaveMode.Full);
+            var clonedSettings = new ExceptionHandlingSettings();
+
+            // Copy the policies manually (shallow clone should be enough for test purposes)
+            foreach (ExceptionPolicyData policy in settings.ExceptionPolicies)
+            {
+                var newPolicy = new ExceptionPolicyData(policy.Name);
+                foreach (ExceptionTypeData type in policy.ExceptionTypes)
+                {
+                    var newType = new ExceptionTypeData
+                    {
+                        Name = type.Name,
+                        TypeName = type.TypeName,
+                        PostHandlingAction = type.PostHandlingAction
+                    };
+                    foreach (ExceptionHandlerData handler in type.ExceptionHandlers)
+                    {
+                        newType.ExceptionHandlers.Add(handler);
+                    }
+                    newPolicy.ExceptionTypes.Add(newType);
+                }
+                clonedSettings.ExceptionPolicies.Add(newPolicy);
+            }
+
+            config.Sections.Remove(ExceptionHandlingSettings.SectionName); // avoid conflict
+            config.Sections.Add(ExceptionHandlingSettings.SectionName, clonedSettings); config.Save(ConfigurationSaveMode.Full);
             ConfigurationManager.RefreshSection(ExceptionHandlingSettings.SectionName);
 
             // Reload config after save
