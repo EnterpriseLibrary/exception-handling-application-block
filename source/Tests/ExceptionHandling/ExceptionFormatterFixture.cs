@@ -2,6 +2,7 @@
 
 using System;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Security;
 using System.Security.Permissions;
 using System.Security.Policy;
@@ -211,7 +212,8 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
             Assert.AreEqual(AppDomain.CurrentDomain.FriendlyName, formatter.AdditionalInfo[appDomainName]);
             Assert.AreEqual(Thread.CurrentPrincipal.Identity.Name, formatter.AdditionalInfo[threadIdentity]);
 
-            if (string.Compare(permissionDenied, formatter.AdditionalInfo[windowsIdentity]) != 0)
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows) &&
+                    string.Compare(permissionDenied, formatter.AdditionalInfo[windowsIdentity]) != 0)
             {
                 Assert.AreEqual(WindowsIdentity.GetCurrent().Name, formatter.AdditionalInfo[windowsIdentity]);
             }
