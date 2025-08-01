@@ -1,4 +1,4 @@
-// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
 using System.Collections.Generic;
@@ -75,8 +75,10 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
         {
             Exception exceptionToWrap = new Exception();
             Exception thrownException;
-            ExceptionPolicy.HandleException(exceptionToWrap, "LocalizedWrapPolicy", out thrownException);
 
+            bool shouldThrow = ExceptionPolicy.HandleException(exceptionToWrap, "LocalizedWrapPolicy", out thrownException);
+
+            Assert.IsNotNull(thrownException); // ✅ avoid NullReferenceException
             Assert.AreEqual(Resources.ExceptionMessage, thrownException.Message);
         }
 
