@@ -32,7 +32,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
 
                 ExceptionHandlingSettings settings = (ExceptionHandlingSettings)
                     configSource.GetSection(ExceptionHandlingSettings.SectionName);
-                ;
+                
                 return settings.ExceptionPolicies.Get(wrapPolicy);
             }
         }
@@ -47,8 +47,14 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
         [TestMethod]
         public void GetPolicyByNameFailTest()
         {
+            string configPath = Path.Combine(AppContext.BaseDirectory, "Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests.dll.config");
+
+            var configSource = new FileConfigurationSource(configPath);
+            var policyFactory = new ExceptionPolicyFactory(configSource);
+            ExceptionPolicy.SetExceptionManager(policyFactory.CreateManager(), false);
+
             ExceptionHandlingSettings settings = (ExceptionHandlingSettings)
-                new SystemConfigurationSource(false).GetSection(ExceptionHandlingSettings.SectionName);
+                configSource.GetSection(ExceptionHandlingSettings.SectionName);
             settings.ExceptionPolicies.Get(badString);
         }
 
