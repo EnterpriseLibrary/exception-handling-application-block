@@ -119,7 +119,16 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
             System.Configuration.Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
             config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            ExceptionHandlingSettings settings = (ExceptionHandlingSettings)config.Sections[ExceptionHandlingSettings.SectionName];
+
+            string configPath = Path.Combine(AppContext.BaseDirectory, "Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests.dll.config");
+
+            var configSource = new FileConfigurationSource(configPath);
+            var policyFactory = new ExceptionPolicyFactory(configSource);
+            ExceptionPolicy.SetExceptionManager(policyFactory.CreateManager(), false);
+
+            ExceptionHandlingSettings settings = (ExceptionHandlingSettings)
+                configSource.GetSection(ExceptionHandlingSettings.SectionName);
+
             WrapHandlerData data = (WrapHandlerData)settings.ExceptionPolicies.Get(wrapPolicy).ExceptionTypes.Get(exceptionType).ExceptionHandlers.Get(wrapHandler);
             string oldName = data.Name;
             data.Name = newWrapHandler;
