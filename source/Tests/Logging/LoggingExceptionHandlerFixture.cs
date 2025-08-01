@@ -25,6 +25,11 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Tests
 
             var source = new FileConfigurationSource(configPath);
 
+            // Initialize LogWriter required by LoggingExceptionHandler
+            var logWriter = new LogWriterFactory(source).Create();
+            Logger.SetLogWriter(logWriter, false);
+
+            // Initialize ExceptionPolicy
             var policyFactory = new ExceptionPolicyFactory(source);
             ExceptionPolicy.SetExceptionManager(policyFactory.CreateManager(), false);
         }
