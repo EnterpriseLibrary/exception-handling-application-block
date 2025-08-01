@@ -215,6 +215,10 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows) &&
                     string.Compare(permissionDenied, formatter.AdditionalInfo[windowsIdentity]) != 0)
             {
+                foreach (var key in formatter.AdditionalInfo.Keys)
+                {
+                    Console.WriteLine($"Key: {key}, Value: '{formatter.AdditionalInfo[key]}'");
+                }
                 Console.WriteLine("WindowsIdentity.GetCurrent().Name: "+ WindowsIdentity.GetCurrent().Name);
                 Assert.AreEqual(WindowsIdentity.GetCurrent().Name, formatter.AdditionalInfo[windowsIdentity]);
             }
