@@ -116,66 +116,91 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
         [TestMethod]
         public void CanOpenAndSaveWithWrapHandler()
         {
+            // Load config from test config file
             string configPath = Path.Combine(AppContext.BaseDirectory, "Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests.dll.config");
-
-            // Load and build manager
             var configSource = new FileConfigurationSource(configPath);
-            var policyFactory = new ExceptionPolicyFactory(configSource);
-            ExceptionPolicy.SetExceptionManager(policyFactory.CreateManager(), false);
-
-            // Modify settings
             var settings = (ExceptionHandlingSettings)configSource.GetSection(ExceptionHandlingSettings.SectionName);
-            var data = (WrapHandlerData)settings.ExceptionPolicies.Get(wrapPolicy)
-                        .ExceptionTypes.Get(exceptionType)
-                        .ExceptionHandlers.Get(wrapHandler);
-            string oldName = data.Name;
-            data.Name = newWrapHandler;
 
-            
-            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            config.Sections.Remove(ExceptionHandlingSettings.SectionName); // optional: avoid duplicates
+            // Load original handler and backup original name
+            var policyData = settings.ExceptionPolicies.Get(wrapPolicy);
+            var exceptionTypeData = policyData.ExceptionTypes.Get(exceptionType);
+            var handlerData = (WrapHandlerData)exceptionTypeData.ExceptionHandlers.Get(wrapHandler);
+            string originalName = handlerData.Name;
+
+            // Rename the handler
+            handlerData.Name = newWrapHandler;
+
+            // Clone settings to avoid shared ownership errors
             var clonedSettings = new ExceptionHandlingSettings();
-
-            // Copy the policies manually (shallow clone should be enough for test purposes)
-            foreach (ExceptionPolicyData policy in settings.ExceptionPolicies)
+            var clonedPolicy = new ExceptionPolicyData(policyData.Name);
+            var clonedExceptionType = new ExceptionTypeData
             {
-                var newPolicy = new ExceptionPolicyData(policy.Name);
-                foreach (ExceptionTypeData type in policy.ExceptionTypes)
-                {
-                    var newType = new ExceptionTypeData
-                    {
-                        Name = type.Name,
-                        TypeName = type.TypeName,
-                        PostHandlingAction = type.PostHandlingAction
-                    };
-                    foreach (ExceptionHandlerData handler in type.ExceptionHandlers)
-                    {
-                        newType.ExceptionHandlers.Add(handler);
-                    }
-                    newPolicy.ExceptionTypes.Add(newType);
-                }
-                clonedSettings.ExceptionPolicies.Add(newPolicy);
+                Name = exceptionTypeData.Name,
+                TypeName = exceptionTypeData.TypeName,
+                PostHandlingAction = exceptionTypeData.PostHandlingAction
+            };
+
+            foreach (ExceptionHandlerData handler in exceptionTypeData.ExceptionHandlers)
+            {
+                clonedExceptionType.ExceptionHandlers.Add(handler); // shallow copy; OK for this test
             }
 
-            config.Sections.Remove(ExceptionHandlingSettings.SectionName); // avoid conflict
-            config.Sections.Add(ExceptionHandlingSettings.SectionName, clonedSettings); config.Save(ConfigurationSaveMode.Full);
+            clonedPolicy.ExceptionTypes.Add(clonedExceptionType);
+            clonedSettings.ExceptionPolicies.Add(clonedPolicy);
+
+            // Load modifiable config
+            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+            // Remove old section and add cloned one
+            if (config.Sections[ExceptionHandlingSettings.SectionName] != null)
+            {
+                config.Sections.Remove(ExceptionHandlingSettings.SectionName);
+            }
+            config.Sections.Add(ExceptionHandlingSettings.SectionName, clonedSettings);
+
+            config.Save(ConfigurationSaveMode.Modified);
             ConfigurationManager.RefreshSection(ExceptionHandlingSettings.SectionName);
 
-            // Reload config after save
-            var reloadedSource = new FileConfigurationSource(configPath);
-            settings = (ExceptionHandlingSettings)reloadedSource.GetSection(ExceptionHandlingSettings.SectionName);
-            data = (WrapHandlerData)settings.ExceptionPolicies.Get(wrapPolicy)
-                        .ExceptionTypes.Get(exceptionType)
-                        .ExceptionHandlers.Get(newWrapHandler);
+            // Reload settings from saved config
+            var reloadedConfigSource = new FileConfigurationSource(configPath);
+            var reloadedSettings = (ExceptionHandlingSettings)reloadedConfigSource.GetSection(ExceptionHandlingSettings.SectionName);
+            var reloadedHandler = (WrapHandlerData)reloadedSettings
+                .ExceptionPolicies.Get(wrapPolicy)
+                .ExceptionTypes.Get(exceptionType)
+                .ExceptionHandlers.Get(newWrapHandler);
 
-            Assert.IsNotNull(data);
-            Assert.AreEqual(newWrapHandler, data.Name);
+            // Assertions
+            Assert.IsNotNull(reloadedHandler);
+            Assert.AreEqual(newWrapHandler, reloadedHandler.Name);
 
-            // Reset
-            data.Name = oldName;
-            config.Sections.Remove(ExceptionHandlingSettings.SectionName);
-            config.Sections.Add(ExceptionHandlingSettings.SectionName, settings);
-            config.Save(ConfigurationSaveMode.Full);
+            // Restore original name
+            reloadedHandler.Name = originalName;
+
+            var restorePolicy = new ExceptionPolicyData(wrapPolicy);
+            var restoreExceptionType = new ExceptionTypeData
+            {
+                Name = exceptionType,
+                TypeName = exceptionTypeData.TypeName,
+                PostHandlingAction = exceptionTypeData.PostHandlingAction
+            };
+
+            foreach (ExceptionHandlerData handler in exceptionTypeData.ExceptionHandlers)
+            {
+                restoreExceptionType.ExceptionHandlers.Add(handler);
+            }
+
+            restorePolicy.ExceptionTypes.Add(restoreExceptionType);
+
+            var restoredSettings = new ExceptionHandlingSettings();
+            restoredSettings.ExceptionPolicies.Add(restorePolicy);
+
+            if (config.Sections[ExceptionHandlingSettings.SectionName] != null)
+            {
+                config.Sections.Remove(ExceptionHandlingSettings.SectionName);
+            }
+            config.Sections.Add(ExceptionHandlingSettings.SectionName, restoredSettings);
+
+            config.Save(ConfigurationSaveMode.Modified);
             ConfigurationManager.RefreshSection(ExceptionHandlingSettings.SectionName);
         }
     }
