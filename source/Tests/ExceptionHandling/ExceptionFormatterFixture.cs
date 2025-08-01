@@ -188,7 +188,9 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
         {
             StringBuilder sb = new StringBuilder();
             StringWriter writer = new StringWriter(sb);
-
+#if NET8_0_OR_GREATER
+            Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity("TestUser"), null);
+#endif
             Exception exception = new FileNotFoundExceptionWithIndexer(fileNotFoundMessage, theFile);
             TextExceptionFormatter formatter = new TextExceptionFormatter(writer, exception);
 
