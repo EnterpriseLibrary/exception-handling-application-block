@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Globalization;
 using System.Threading;
@@ -18,7 +19,22 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
         [TestInitialize]
         public void Initialize()
         {
-            ExceptionPolicy.SetExceptionManager(new ExceptionPolicyFactory().CreateManager(), false);
+            var handler = new WrapHandler(Resources.ExceptionMessage, typeof(ApplicationException));
+
+            var entry = new ExceptionPolicyEntry(
+                typeof(Exception),
+                PostHandlingAction.None,
+                new IExceptionHandler[] { handler }
+            );
+
+            var policyDefinition = new ExceptionPolicyDefinition(
+                "LocalizedWrapPolicy",
+                new List<ExceptionPolicyEntry> { entry }
+            );
+
+            var manager = new ExceptionManager(policyDefinition); 
+
+            ExceptionPolicy.SetExceptionManager(manager, false);
         }
 
         [TestCleanup]
