@@ -134,8 +134,8 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
             data.Name = newWrapHandler;
             config.Save();
 
-            ConfigurationManager.RefreshSection(ExceptionHandlingSettings.SectionName);
-            settings = (ExceptionHandlingSettings)ConfigurationManager.GetSection(ExceptionHandlingSettings.SectionName);
+            var reloadedConfigSource = new FileConfigurationSource(configPath);
+            settings = (ExceptionHandlingSettings)reloadedConfigSource.GetSection(ExceptionHandlingSettings.SectionName);
             data = (WrapHandlerData)settings.ExceptionPolicies.Get(wrapPolicy).ExceptionTypes.Get(exceptionType).ExceptionHandlers.Get(newWrapHandler);
 
             Assert.IsNotNull(data);
