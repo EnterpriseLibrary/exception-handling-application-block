@@ -2,7 +2,7 @@
   <Import Project="..\..\..\package.props" />
 
   <PropertyGroup>
-    <TargetFrameworks>net45;net46;net47</TargetFrameworks>
+    <TargetFrameworks>net46;net47</TargetFrameworks>
 
     <AssemblyVersion>$(MajorVersion).0.0.0</AssemblyVersion>
     <FileVersion>$(Version).$(Revision)</FileVersion>
@@ -13,7 +13,7 @@
     <RootNamespace>$(PreAssemblyName).ExceptionHandling.WCF</RootNamespace>
     <AssemblyTitle>Enterprise Library Exception Handling WCF Provider</AssemblyTitle>
 
-    <PackageId>$(PrePackageName).ExceptionHandling.WCF$(PostPackageName)</PackageId>
+    <PackageId>$(BypassPrePackageName).$(PrePackageName).ExceptionHandling.WCF$(PostPackageName)</PackageId>
     <Title>Enterprise Library Exception Handling WCF Provider</Title>
     <Description>Enterprise Library Exception Handling WCF Provider</Description>
     <Summary>Enterprise Library Exception Handling WCF Provider</Summary>
