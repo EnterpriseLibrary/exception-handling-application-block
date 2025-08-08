@@ -5,6 +5,9 @@ using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
 using System.Security;
 
+#if !NET8_0
 [assembly: ReliabilityContract(Consistency.WillNotCorruptState, Cer.None)]
+#endif
+
 [assembly: SecurityTransparent]
 [assembly: ComVisible(false)]

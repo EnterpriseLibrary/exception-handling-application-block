@@ -25,7 +25,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
 
             Assert.AreEqual("ID : " + id.ToString(), formattedMessage);
         }
-
+#if Windows
         [TestMethod]
         [Ignore]    // TODO remove with instrumentation
         public void LogHandlingError()
@@ -59,5 +59,8 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
                 Assert.AreEqual(EventLogSource, entry.Source);
             }
         }
+
+#endif
+
     }
 }

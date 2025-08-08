@@ -1,5 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
 using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration;
 using Microsoft.Practices.EnterpriseLibrary.Logging;
 using Microsoft.Practices.EnterpriseLibrary.Logging.TestSupport.TraceListeners;
@@ -20,8 +21,17 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Tests
         [TestInitialize]
         public void Initialize()
         {
-            Logger.SetLogWriter(new LogWriterFactory().Create(), false);
-            ExceptionPolicy.SetExceptionManager(new ExceptionPolicyFactory().CreateManager(), false);
+            string configPath = Path.Combine(AppContext.BaseDirectory, "Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Tests.dll.config");
+
+            var source = new FileConfigurationSource(configPath);
+
+            // Initialize LogWriter required by LoggingExceptionHandler
+            var logWriter = new LogWriterFactory(source).Create();
+            Logger.SetLogWriter(logWriter, false);
+
+            // Initialize ExceptionPolicy
+            var policyFactory = new ExceptionPolicyFactory(source);
+            ExceptionPolicy.SetExceptionManager(policyFactory.CreateManager(), false);
         }
 
         [TestCleanup]

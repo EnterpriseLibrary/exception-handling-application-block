@@ -2,6 +2,7 @@
 
 using System;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Security;
 using System.Security.Permissions;
 using System.Security.Policy;
@@ -34,6 +35,9 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
         [TestMethod]
         public void AdditionalInfoTest()
         {
+#if NET8_0_OR_GREATER
+            Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity("TestUser"), null);
+#endif
             StringBuilder sb = new StringBuilder();
             StringWriter writer = new StringWriter(sb);
 
@@ -80,7 +84,10 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
             Assert.AreEqual(null, formatter.properties[message]);
         }
 
-        [TestMethod]
+
+
+#if !NET8_0_OR_GREATER
+ [TestMethod]
         public void CanGetMachineNameWithoutSecurity()
         {
             var evidence = new Evidence();
@@ -134,6 +141,9 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
             }
         }
 
+ 
+#endif
+        
         public class ExceptionFormatterTester : MarshalByRefObject
         {
             public string DoTest()
@@ -153,7 +163,9 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
         {
             StringBuilder sb = new StringBuilder();
             StringWriter writer = new StringWriter(sb);
-
+#if NET8_0_OR_GREATER
+            Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity("TestUser"), null);
+#endif
             Exception exception = new FileNotFoundExceptionWithIndexer(fileNotFoundMessage, theFile);
             TextExceptionFormatter formatter = new TextExceptionFormatter(writer, exception);
 
@@ -174,7 +186,8 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
             Assert.AreEqual(AppDomain.CurrentDomain.FriendlyName, formatter.AdditionalInfo[appDomainName]);
             Assert.AreEqual(Thread.CurrentPrincipal.Identity.Name, formatter.AdditionalInfo[threadIdentity]);
 
-            if (string.Compare(permissionDenied, formatter.AdditionalInfo[windowsIdentity]) != 0)
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows) &&
+                    string.Compare(permissionDenied, formatter.AdditionalInfo[windowsIdentity]) != 0)
             {
                 Assert.AreEqual(WindowsIdentity.GetCurrent().Name, formatter.AdditionalInfo[windowsIdentity]);
             }

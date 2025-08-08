@@ -314,8 +314,9 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling
             string windowsIdentity = String.Empty;
             try
             {
-                windowsIdentity = WindowsIdentity.GetCurrent().Name;
-            }
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                    windowsIdentity = WindowsIdentity.GetCurrent().Name;
+             }
             catch (SecurityException)
             {
                 windowsIdentity = Resources.PermissionDenied;
