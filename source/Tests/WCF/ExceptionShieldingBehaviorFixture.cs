@@ -36,7 +36,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.WCF.Tests
             Uri serviceUri = new Uri("http://tests:30003");
             ServiceHost host = new ServiceHost(typeof(MockService), serviceUri);
             host.AddServiceEndpoint(typeof(IMockService), new WSHttpBinding(), serviceUri);
-            try
+            try 
             {
                 host.Open();
             }
