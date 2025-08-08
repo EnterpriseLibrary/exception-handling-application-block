@@ -17,6 +17,9 @@
 		<PostPackageName>.NetCore</PostPackageName>
 		<PackageReleaseNotes>This package is distributed as .NET Standard 2.0, .NET Core 2.0, .NET 4.0, 4.5, 4.6, 4.7 package.</PackageReleaseNotes>
 
+		<IncludeSymbols>True</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
 		<PackageVersion>$(Version)$(SemanticVersionSuffix)</PackageVersion>
 		<Authors>Enterprise Library Open Source Project</Authors>
 		<Copyright>Copyright © Microsoft 2008</Copyright>
