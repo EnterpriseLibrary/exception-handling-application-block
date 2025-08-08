@@ -42,7 +42,7 @@
 		<!--In order to debug the EntLib dependencies open 'ExceptionHandling (With Dependencies).sln' and change 'EntLibDependencyType' value to Project -->
 		<EntLibDependencyType>Package</EntLibDependencyType>
 		<EntLibCommonVersion>7.0.0-rc1</EntLibCommonVersion>
-		<EntLibLoggingVersion>7.0.0-rc2</EntLibLoggingVersion>
+		<EntLibLoggingVersion>7.0.0-rc4</EntLibLoggingVersion>
 	</PropertyGroup>
 
 </Project>
