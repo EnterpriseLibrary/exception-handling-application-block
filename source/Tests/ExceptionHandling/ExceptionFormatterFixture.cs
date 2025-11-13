@@ -35,7 +35,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
         [TestMethod]
         public void AdditionalInfoTest()
         {
-#if NET8_0_OR_GREATER
+#if NET10_0_OR_GREATER
             Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity("TestUser"), null);
 #endif
             StringBuilder sb = new StringBuilder();
@@ -86,7 +86,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
 
 
 
-#if !NET8_0_OR_GREATER
+#if !NET10_0_OR_GREATER
  [TestMethod]
         public void CanGetMachineNameWithoutSecurity()
         {
@@ -163,7 +163,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
         {
             StringBuilder sb = new StringBuilder();
             StringWriter writer = new StringWriter(sb);
-#if NET8_0_OR_GREATER
+#if NET10_0_OR_GREATER
             Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity("TestUser"), null);
 #endif
             Exception exception = new FileNotFoundExceptionWithIndexer(fileNotFoundMessage, theFile);

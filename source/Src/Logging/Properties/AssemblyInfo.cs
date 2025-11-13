@@ -5,7 +5,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
 using System.Security;
 
-#if !NET8_0
+#if !NET10_0
 [assembly: ReliabilityContract(Consistency.WillNotCorruptState, Cer.None)]
 #endif
 

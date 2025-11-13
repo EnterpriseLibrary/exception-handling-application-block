@@ -13,7 +13,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Tests
 {
     public partial class ExceptionFormatterFixture
     {
-#if !NET8_0_OR_GREATER
+#if !NET10_0_OR_GREATER
         [TestMethod]
         [Ignore]
         public void ReflectionFormatterReadSecurityExceptionPropertiesWithoutPermissionTest()
