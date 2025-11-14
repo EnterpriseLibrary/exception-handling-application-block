@@ -116,7 +116,7 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
+    <DebugType>portable</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>$(SolutionDir)..\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE;WMINET10</DefineConstants>
@@ -131,7 +131,7 @@
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <DebugType>full</DebugType>
+    <DebugType>portable</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>$(SolutionDir)..\bin\Release\</OutputPath>
     <DefineConstants>TRACE;WMINET10</DefineConstants>
