@@ -40,7 +40,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.ExceptionHandling
         }
 
 
-#if !NET8_0_OR_GREATER
+#if !NET10_0_OR_GREATER
         /// <summary>
         /// Initializes with serialized data.
         /// </summary>

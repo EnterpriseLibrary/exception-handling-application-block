@@ -7,7 +7,7 @@ using Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Design;
 using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration;
 
 
-#if !NET8_0
+#if !NET10_0
 [assembly: ReliabilityContract(Consistency.WillNotCorruptState, Cer.None)]
 #endif
 
