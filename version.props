@@ -5,6 +5,6 @@
 	  <ReleaseVersion>0</ReleaseVersion>
 	  <Revision>0</Revision>
 
-	  <SemanticVersionSuffix>-rc2</SemanticVersionSuffix>
+	  <SemanticVersionSuffix>-rc3</SemanticVersionSuffix>
   </PropertyGroup>
 </Project>
